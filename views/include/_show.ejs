@@ -1,0 +1,17 @@
+<% for(var i = 0; i < domics.length; i++) { %>
+<tr>
+    <td><%= i + 1 %></td>
+    <td><%= domics[i].name %></td>
+    <td><%= domics[i].email %></td>
+    <td><%= domics[i].gender %></td>
+    <td><%= domics[i].age %></td>
+    <td>
+        <a href="/update-domic?id=<%= domics[i]._id%>" class="btn border-shadow update">
+            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+        </a>
+        <a class="btn border-shadow delete" data-id=<%= domics[i]._id%> >
+            <span class="text-gradient"><i class="fas fa-times"></i></span>
+        </a>
+    </td>
+</tr>
+<% } %>

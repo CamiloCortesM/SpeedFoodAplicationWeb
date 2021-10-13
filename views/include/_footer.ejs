@@ -1,0 +1,45 @@
+<footer id="footer">
+    <nav>
+        <div class="container">
+            <div class="text-center">
+                <i class="far fa-copyright text-light "></i><a class="text-light">2021, UPTC Sogamoso,  </a> <a
+                    class="text-light" href="https://github.com/CamiloCortes1753"> Camilo Cortes </a><i
+                    class="fab fa-github text-light"></i> <a class="text-light" href="https://github.com/DANIELSSF">
+                    Daniel Silva </a> <i class="fab fa-github text-light"></i> </i></i>
+            </div>
+        </div>
+    </nav>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+<script src="/popper/popper.min.js"></script>
+<script src="/js/index.js"></script>
+<script src="/plugins/fuzzyComplete/js/fuse.min.js"></script>
+<script src="/plugins/fuzzyComplete/js/fuzzycomplete.js"></script>
+<script src="/js/autoComplete.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+<script>
+    $(document).ready(function () {
+        $('#datatable').DataTable({
+            language: {
+                search: "Buscar:",
+                paginate: {
+                    first: "Primero",
+                    previous: "Anterior",
+                    next: "Siguiente",
+                    last: "Ultimo"
+                },
+                info: "SpeedFood",
+                infoPostFix: "",
+                infoFiltered: "",
+            }
+        });
+    });
+
+</script>
+
+</html>

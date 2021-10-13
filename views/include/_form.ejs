@@ -1,0 +1,35 @@
+ <!-- form handling -->
+ <form action="/api/domics" method="POST" id="add_domic">
+    <div class="new_domic">
+        <div class="form-group">
+            <label for="name" class="text-dark">Nombre</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="name" value="" placeholder="Mark Stoenis" onkeypress="return onlyAlpha(event)" required>
+        </div>
+        <div class="form-group">
+            <label for="Email" class="text-dark">Email</label>
+            <input type="text" name="email" value="" placeholder="example@gmail.com"  required>
+        </div>
+        <div class="form-group">
+            <label for="gender" class="text-dark">Genero</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-2" name="gender" value="Masculino" >
+                <label for="radio-2" class="radio-label">Masculino</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-3" name="gender" value="Femenino" >
+                <label for="radio-3" class="radio-label">Femenino</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Age" class="text-dark">Edad</label>
+            <input type="text" name="age" value="" placeholder="20" onkeypress="return onlyNums(event)" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Confirmar</button>
+        </div>
+
+    </div>
+</form>

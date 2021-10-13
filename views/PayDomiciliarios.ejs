@@ -1,0 +1,41 @@
+
+<!-- include header -->
+    <%- include('include/_header') %>
+<!-- /include header -->
+
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <a href="/pedidos" class="border-shadow">
+                    <span class="text-gradient">Volver <i class="fas fa-chevron-left"></i></span>
+                </a>
+            </div>
+            <form action="/" method="POST">
+                <table class="table" id="datatable">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Ganancia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%- include('include/_showLiquid') %>
+                    </tbody>    
+                </table>
+            </form>
+        </div>
+        <div class="container" style="text-align: center;">
+        <button type="button" class="btn btn-info" onclick="Liquidar()">Liquidar</button>
+        </div>
+    </main>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->

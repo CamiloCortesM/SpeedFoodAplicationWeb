@@ -1,0 +1,83 @@
+
+<!-- include header -->
+    <%- include('include/_header') %>
+<!-- /include header -->
+
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <a href="/User" class="border-shadow">
+                    <span class="text-gradient">Volver <i class="fas fa-chevron-left"></i></span>
+                </a>
+            </div>
+            <div class="container">
+                <label for="inputDomiciliar2" class="form-label">Domiciliario</label>
+                <select id="inputDomiciliar2" class="form-select" name="nameDomic" onchange="actualizar(this)">
+                  <option selected>Seleccione...</option>
+                </select>
+              </div>
+
+            <!-- form handling -->
+            <form action="/" method="POST">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Numero de Pedido</th>
+                            <th>Nombre</th>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Ganancia</th>
+                        </tr>
+                    </thead>
+                    <tbody id ="datauser"> 
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </main>
+    <script>
+
+window.addEventListener("load", function(){
+
+let url = 'http://localhost:3000/api/domics'
+fetch(url)
+    .then(response => response.json())
+    .then(data => mostrarData(data))
+    .catch(error => console.log(error))
+    
+    const mostrarData = (data) => {
+        const selectElement = document.getElementById('inputDomiciliar2');
+        for (let i = 0; i<data.length; i++){
+                let category = `<option>${data[i].name}</option>`
+                selectElement.insertAdjacentHTML("beforeend",category);
+                   
+        }
+    }   
+});
+        function actualizar(opcion){
+    let url = 'http://localhost:3000/api/pedits'
+    fetch(url)
+        .then(response => response.json())
+        .then(data => mostrarData(data))
+        .catch(error => console.log(error))
+        
+    const mostrarData = (data) => {
+        let body = ''
+        for (let i = 0; i<data.length; i++){
+            if(data[i].nameDomic == opcion.value){
+                body += `<tr><td>${i+1}</td><td>${data[i].nameDomic}</td><td>${data[i].Date}</td><td>${data[i].name}</td><td>${data[i].earnings}</td></tr>` 
+            }
+    }
+    document.getElementById('datauser').innerHTML = body   
+}
+}
+    </script>
+<!-- /Main Site -->
+
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->

@@ -1,0 +1,54 @@
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <main id="site-main">
+   <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/products"><i class="fas fa-angle-double-left"></i> Volver</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Producto</h2>
+            <span class="text-dark">Utilice el siguiente formulario para editar el Producto</span>
+        </div>
+
+        <!-- add domic form -->
+         <!-- form handling -->
+ <form method="POST" id="update_product">
+    <div class="new_product">
+        <div class="form-group">
+            <label for="type" class="text-dark">Tipo</label>
+            <input type="hidden" name="id" value="<%= product._id %>">
+            <input type="text" name="type" value="<%= product.type %>" placeholder="Hamburguesa" onkeypress="return onlyAlpha(event)" required>
+        </div>
+        <div class="form-group">
+            <label for="name" class="text-dark">Nombre</label>
+            <input type="text" name="name" value="<%= product.name%>" placeholder="Nombre del Producto" required>
+        </div>
+        <div class="form-group">
+            <label for="description" class="text-dark">Descripcion</label>
+            <input type="text" name="description" value="<%= product.description%>" placeholder="Ingredientes" required>
+        </div>
+
+        <div class="form-group">
+            <label for="price" class="text-dark">Precio</label>
+            <input type="text" name="price" value="<%= product.price%>" placeholder="0" onkeypress="return onlyNums(event)" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Confirmar</button>
+        </div>
+
+    </div>
+</form>
+       
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->

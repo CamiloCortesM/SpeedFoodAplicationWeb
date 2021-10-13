@@ -1,0 +1,96 @@
+
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/pedidos"><i class="fas fa-angle-double-left"></i> Volver</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Nuevo Pedido</h2>
+            <span class="text-dark">Utilice el siguiente formulario para crear un Pedido</span>
+        </div>
+        <form class="row g-3" action="/api/pedits" method="POST" id="new_pedit">
+            <div class="col-md-4">
+              <label for="fechaActual" class="form-label">fecha</label>
+              <input type="date" name="Date" id="fechaActual" value="" readonly  class="form-control">
+            </div>
+            <div class="col-md-4">
+              <label for="inputname" class="form-label">Nombre</label>
+              <input type="text" name="name" class="form-control" id="inputname" placeholder="Nombre Cliente">
+            </div>
+            <div class="col-md-4">
+              <label for="inputAdress" class="form-label">Direccion</label>
+              <input type="text" class="form-control" name="address" id="inputAdress" placeholder="CR 4B #19-35 Barrio los Alvarez">
+            </div>
+            <div class="col-md-4">
+              <label for="inputphone" class="form-label" >Telefono</label>
+              <input type="text" class="form-control" name="telephone"id="inputphone" placeholder="3154869756" onkeypress="return onlyNums(event)">
+            </div>
+            <div class="col-md-4">
+              <label for="inputDomiciliar" class="form-label">Domiciliario</label>
+              <select id="inputDomiciliar" class="form-select" name="nameDomic">
+                <option selected>Seleccione...</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+                <label for="inputTypeFood" class="form-label">Tipo de Comida</label>
+                <select id="inputTypeFood" name="TypeProduct"class="form-select" onchange="actualizar(this)" name="address">
+                  <option selected>Seleccione...</option>
+                  <% var Productos = new Array()%>
+                  <%  var j = 0 %>
+                  <% for(var i = 0; i < products.length; i++){%>
+                    <%var indice = Productos.indexOf(products[i].type);%>
+                    <%if(indice == -1){%>
+                      <option ><%= products[i].type %></option>
+                      <%  Productos[j] = products[i].type;%>
+                        <%   j++;%>
+                      <%}%>
+                        <%  }%>
+                </select>
+              </div>
+            <div class="col-md-5">
+              <label for="inputFood" class="form-label">Nombre de Comida</label>
+              <select id="inputFood" class="form-select"  onchange="Price(this)" name="NameProduct">
+                <option selected>Seleccione...</option>
+              </select>
+            </div>
+            <div class="col-md-5">
+              <label for="inputprice" class="form-label">Precio</label>
+              <input type="text" class="form-control" id="inputprice" readonly name="price">
+            </div>
+            <div class="col-md-2">
+              <label for="inputpriceTotal" class="form-label" >Precio Total</label>
+              <input type="text" class="form-control" id="inputpriceTotal" readonly name="priceTotal">
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary update">Confirmar</button>
+            </div>
+          </form>
+    </div>
+</main>    
+<script src="/js/FormPedit.js"></script>
+<footer id="footer">
+  <nav>
+      <div class="container">
+          <div class="text-center">
+              <i class="far fa-copyright text-light "></i><a class="text-light">2021, UPTC Sogamoso,  </a> <a
+                  class="text-light" href="https://github.com/CamiloCortes1753"> Camilo Cortes </a><i
+                  class="fab fa-github text-light"></i> <a class="text-light" href="https://github.com/DANIELSSF">
+                  Daniel Silva </a> <i class="fab fa-github text-light"></i> </i></i>
+          </div>
+      </div>
+  </nav>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+  integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+
+<!-- include header -->
+    <%- include('include/_header') %>
+<!-- /include header -->
+
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <a href="/" class="border-shadow">
+                    <span class="text-gradient">Cerrar Sesion <i class="fas fa-chevron-left"></i></span>
+                </a>
+                <a href="/infoUser" class="border-shadow">
+                    <span class="text-gradient">Informacion Pagos <i class="fas fa-user"></i></span>
+                </a>
+            </div>
+            <div class="container">
+                <label for="inputDomiciliar" class="form-label">Domiciliario</label>
+                <select id="inputDomiciliar" class="form-select" name="nameDomic" onchange="actualizar(this)">
+                  <option selected>Seleccione...</option>
+                </select>
+              </div>
+
+            <!-- form handling -->
+            <form action="/" method="POST">
+                <table class="table"  id="datatable">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Fecha</th>
+                            <th>Ciente</th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
+                            <th>Domiciliario</th>
+                            <th>Tipo</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Total</th>
+                            <th>liquidado</th>
+                        </tr>
+                    </thead>
+                    <tbody id ="data3"> 
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </main>
+   
+    <footer id="footer">
+        <nav>
+            <div class="container">
+                <div class="text-center">
+                    <i class="far fa-copyright text-light "></i><a class="text-light">2021, UPTC Sogamoso,  </a> <a
+                        class="text-light" href="https://github.com/CamiloCortes1753"> Camilo Cortes </a><i
+                        class="fab fa-github text-light"></i> <a class="text-light" href="https://github.com/DANIELSSF">
+                        Daniel Silva </a> <i class="fab fa-github text-light"></i> </i></i>
+                </div>
+            </div>
+        </nav>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    </body>
+    <script src="/js/User.js"></script>
+    <script src="/plugins/fuzzyComplete/js/fuse.min.js"></script>
+    <script src="/plugins/fuzzyComplete/js/fuzzycomplete.js"></script>
+    </html>

@@ -1,0 +1,49 @@
+
+<!-- include header -->
+    <%- include('include/_header') %>
+<!-- /include header -->
+
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <a href="/admin" class="border-shadow">
+                    <span class="text-gradient">Volver <i class="fas fa-chevron-left"></i></span>
+                </a>
+                <a href="/new_pedido" class="border-shadow">
+                    <span class="text-gradient">Nuevo Pedido <i class="fas fa-shipping-fast"></i></span>
+                </a>
+                <a href="/PayDomiciliarios" class="border-shadow">
+                    <span class="text-gradient">InfoLiquidacion</span>
+                </a>
+            </div>
+            <form action="/" method="POST">
+                <table class="table" id="datatable">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Fecha</th>
+                            <th>Ciente</th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
+                            <th>Domiciliario</th>
+                            <th>Tipo</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%- include('include/_showPedidos') %>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </main>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->
